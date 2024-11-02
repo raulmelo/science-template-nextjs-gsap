@@ -1,7 +1,7 @@
 # Next.js com GSAP e Animações
 
 Este projeto é uma aplicação Next.js moderna que utiliza GSAP para criar animações suaves e profissionais.
-
+Exemplo simples: <https://science-next-gsap.surge.sh>
 ## 🚀 Instalação
 
 1. Clone o repositório e configura o ambiente para node acima do 16 
@@ -89,3 +89,6 @@ O arquivo `next.config.js` já está configurado para exportação estática com
 - Cores e temas podem ser ajustados em `app/globals.css`
 - Animações podem ser modificadas nos componentes em `components/animations/`
 - Componentes de UI podem ser personalizados em `components/ui/`
+
+
+scrience-next-gsap.surge.sh
