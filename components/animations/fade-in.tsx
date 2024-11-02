@@ -3,8 +3,12 @@
 import { useEffect, useRef, type ReactNode } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(ScrollTrigger);
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 interface FadeInProps {
   children: ReactNode;
@@ -23,7 +27,10 @@ export default function FadeIn({
 }: FadeInProps) {
   const element = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+
+
+
+  useGSAP(() => {
     const el = element.current;
     if (!el) return;
 
@@ -46,7 +53,7 @@ export default function FadeIn({
       delay,
       ease: "power3.out",
     });
-  }, [delay, direction, distance]);
+  }, { scope: element });
 
   return (
     <div ref={element} className={className}>

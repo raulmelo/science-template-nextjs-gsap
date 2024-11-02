@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
+import RegisterGsap from '@/components/animations/register.gsap';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,12 +16,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(
-        inter.className,
-        "min-h-screen bg-background antialiased"
-      )}>
+      <body className={cn( inter.className, "" )}>
+        <RegisterGsap />
         {children}
       </body>
     </html>

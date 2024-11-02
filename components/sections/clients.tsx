@@ -2,11 +2,9 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Star } from "lucide-react";
 import FadeIn from "@/components/animations/fade-in";
 
-gsap.registerPlugin(ScrollTrigger);
 
 const testimonials = [
   {
@@ -110,22 +108,6 @@ export default function ClientsSection() {
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-primary text-primary" />
                   ))}
-                </div>
-                <p className="text-muted-foreground mb-6 flex-grow">
-                  "{testimonial.content}"
-                </p>
-                <div className="flex items-center gap-4">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover"
-                  />
-                  <div>
-                    <h4 className="font-semibold">{testimonial.name}</h4>
-                    <p className="text-sm text-muted-foreground">
-                      {testimonial.role} at {testimonial.company}
-                    </p>
-                  </div>
                 </div>
               </div>
             </FadeIn>
